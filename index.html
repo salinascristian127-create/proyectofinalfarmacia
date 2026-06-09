@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGEV-FARM - Farmacorp Sucursal Junín</title>
+    <!-- Font Awesome CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <i class="fa-solid fa-house-medical"></i> SIGEV-<span>FARM</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="menu-item active" data-tab="tab-modelo">
+                <i class="fa-solid fa-folder-open"></i> 1. MODELO
+            </li>
+            <li class="menu-item" data-tab="tab-inventario">
+                <i class="fa-solid fa-cubes"></i> 2. INVENTARIO
+            </li>
+            <li class="menu-item" data-tab="tab-ventas">
+                <i class="fa-solid fa-hand-holding-dollar"></i> 3. VENTAS
+            </li>
+            <li class="menu-item" data-tab="tab-planillas">
+                <i class="fa-solid fa-file-invoice-dollar"></i> 4. PLANILLAS
+            </li>
+        </ul>
+    </aside>
+
+    <!-- Main Portal Content -->
+    <main class="main-content">
+        
+        <!-- Top Bar Header -->
+        <header class="topbar">
+            <div class="topbar-title">
+                <h1>FARMACORP S.A. - SUCURSAL 3 (CALLE JUNÍN)</h1>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-date" id="current-date">Fecha de Gestión: --/--/----</div>
+                <div class="topbar-user">
+                    <i class="fa-solid fa-user-tie"></i> Administrador
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Body -->
+        <section class="content-body">
+
+            <!-- Stat Summary Grid -->
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>Fármacos Registrados</h3>
+                        <p>40</p>
+                    </div>
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-pills"></i>
+                    </div>
+                </div>
+                <div class="stat-card" style="border-left-color: var(--secondary);">
+                    <div class="stat-info">
+                        <h3>Clientes de Fidelidad</h3>
+                        <p>50</p>
+                    </div>
+                    <div class="stat-icon" style="color: var(--secondary); background-color: rgba(255, 102, 0, 0.1);">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                </div>
+                <div class="stat-card" style="border-left-color: var(--accent-green);">
+                    <div class="stat-info">
+                        <h3>Ventas del Mes</h3>
+                        <p>10 Facturas</p>
+                    </div>
+                    <div class="stat-icon" style="color: var(--accent-green); background-color: rgba(39, 174, 96, 0.1);">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                </div>
+                <div class="stat-card" style="border-left-color: var(--dark);">
+                    <div class="stat-info">
+                        <h3>Personal en Turno</h3>
+                        <p>4 Colaboradores</p>
+                    </div>
+                    <div class="stat-icon" style="color: var(--dark); background-color: rgba(47, 62, 70, 0.1);">
+                        <i class="fa-solid fa-user-clock"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SYSTEM 1: MODELO -->
+            <div class="tab-panel active" id="tab-modelo">
+                <!-- Subtabs -->
+                <div class="sub-tabs">
+                    <button class="sub-tab-button active" data-sub="sub-tab-diagrama">📊 Diagrama de Clases Estructural</button>
+                    <button class="sub-tab-button" data-sub="sub-tab-relaciones">📋 Matriz de Relaciones de Negocio</button>
+                </div>
+
+                <!-- Sub panel: UML SVG Diagram -->
+                <div class="sub-panel active" id="sub-tab-diagrama">
+                    <div class="card-box">
+                        <div class="card-title-bar">
+                            <h2><i class="fa-solid fa-sitemap"></i> Renderizado Arquitectónico UML</h2>
+                        </div>
+                        <div class="uml-svg-container">
+                            <svg width="900" height="420" viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#FF6600" />
+                                    </marker>
+                                </defs>
+
+                                <!-- Connection Lines (Relationships) -->
+                                <!-- Supervisa: Farmacorp to Supervisor -->
+                                <g class="uml-line-group">
+                                    <line x1="240" y1="95" x2="310" y2="95" class="uml-line" marker-end="url(#arrow)" />
+                                    <text x="280" y="85" font-size="11" font-weight="700" fill="#00828A" text-anchor="middle">Supervisa</text>
+                                    <text x="245" y="90" font-size="10" fill="#2F3E46">1</text>
+                                    <text x="305" y="90" font-size="10" fill="#2F3E46">1</text>
+                                </g>
+                                
+                                <!-- Dirige a: Supervisor to Cajero -->
+                                <g class="uml-line-group">
+                                    <line x1="430" y1="170" x2="430" y2="230" class="uml-line" marker-end="url(#arrow)" />
+                                    <text x="445" y="205" font-size="11" font-weight="700" fill="#00828A" text-anchor="start">Dirige a</text>
+                                    <text x="420" y="182" font-size="10" fill="#2F3E46">1</text>
+                                    <text x="420" y="228" font-size="10" fill="#2F3E46">3</text>
+                                </g>
+
+                                <!-- Audita: Supervisor to Almacen -->
+                                <g class="uml-line-group">
+                                    <line x1="540" y1="105" x2="610" y2="105" class="uml-line" marker-end="url(#arrow)" />
+                                    <text x="580" y="95" font-size="11" font-weight="700" fill="#00828A" text-anchor="middle">Audita</text>
+                                    <text x="545" y="100" font-size="10" fill="#2F3E46">1</text>
+                                    <text x="605" y="100" font-size="10" fill="#2F3E46">1..*</text>
+                                </g>
+
+                                <!-- Contiene: Almacen to Farmaco -->
+                                <g class="uml-line-group">
+                                    <line x1="730" y1="170" x2="730" y2="230" class="uml-line" marker-end="url(#arrow)" />
+                                    <text x="740" y="205" font-size="11" font-weight="700" fill="#00828A" text-anchor="start">Contiene</text>
+                                    <text x="720" y="182" font-size="10" fill="#2F3E46">1</text>
+                                    <text x="720" y="228" font-size="10" fill="#2F3E46">1..*</text>
+                                </g>
+
+                                <!-- Vende: Cajero to Farmaco -->
+                                <g class="uml-line-group">
+                                    <line x1="540" y1="305" x2="610" y2="305" class="uml-line" marker-end="url(#arrow)" />
+                                    <text x="580" y="295" font-size="11" font-weight="700" fill="#00828A" text-anchor="middle">Vende</text>
+                                    <text x="545" y="300" font-size="10" fill="#2F3E46">3</text>
+                                    <text x="605" y="300" font-size="10" fill="#2F3E46">1..*</text>
+                                </g>
+
+                                <!-- Fideliza: Farmacorp to Cliente -->
+                                <g class="uml-line-group">
+                                    <line x1="140" y1="150" x2="140" y2="230" class="uml-line" marker-end="url(#arrow)" />
+                                    <text x="150" y="195" font-size="11" font-weight="700" fill="#00828A" text-anchor="start">Fideliza</text>
+                                    <text x="130" y="162" font-size="10" fill="#2F3E46">1</text>
+                                    <text x="130" y="228" font-size="10" fill="#2F3E46">1..*</text>
+                                </g>
+
+                                <!-- Class Boxes -->
+                                <!-- Farmacorp -->
+                                <g class="uml-box-group">
+                                    <rect x="40" y="40" width="200" height="110" class="uml-box-rect" />
+                                    <rect x="40" y="40" width="200" height="28" class="uml-box-header" />
+                                    <text x="140" y="58" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">Farmacorp</text>
+                                    <text x="50" y="85" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- id_sucursal: int</text>
+                                    <text x="50" y="103" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- direccion: str = Junin 110</text>
+                                    <text x="50" y="121" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- nro_sucursal: int = 3</text>
+                                </g>
+
+                                <!-- Supervisor -->
+                                <g class="uml-box-group">
+                                    <rect x="320" y="40" width="220" height="130" class="uml-box-rect" />
+                                    <rect x="320" y="40" width="220" height="28" class="uml-box-header" />
+                                    <text x="430" y="58" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">Supervisor</text>
+                                    <text x="330" y="85" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- id_supervisor: int</text>
+                                    <text x="330" y="103" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- nombre: str = Pablo Javier</text>
+                                    <text x="330" y="121" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- cargo: str</text>
+                                    <text x="330" y="139" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- sueldo_base: float = 3000</text>
+                                </g>
+
+                                <!-- Cajero -->
+                                <g class="uml-box-group">
+                                    <rect x="320" y="240" width="220" height="130" class="uml-box-rect" />
+                                    <rect x="320" y="240" width="220" height="28" class="uml-box-header" />
+                                    <text x="430" y="258" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">Cajero</text>
+                                    <text x="330" y="285" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- id_cajero: int</text>
+                                    <text x="330" y="303" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- nombre: str</text>
+                                    <text x="330" y="321" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- cargo: str = Bioquimico</text>
+                                    <text x="330" y="339" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- sueldo_base: float = 1800</text>
+                                </g>
+
+                                <!-- Almacen -->
+                                <g class="uml-box-group">
+                                    <rect x="620" y="40" width="220" height="130" class="uml-box-rect" />
+                                    <rect x="620" y="40" width="220" height="28" class="uml-box-header" />
+                                    <text x="730" y="58" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">Almacen</text>
+                                    <text x="630" y="85" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- id_almacen: int</text>
+                                    <text x="630" y="103" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- capacidad: float</text>
+                                    <text x="630" y="121" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- sector: str = Farmacos</text>
+                                    <text x="630" y="139" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- stock_disponible: int</text>
+                                </g>
+
+                                <!-- Farmaco -->
+                                <g class="uml-box-group">
+                                    <rect x="620" y="240" width="220" height="150" class="uml-box-rect" />
+                                    <rect x="620" y="240" width="220" height="28" class="uml-box-header" />
+                                    <text x="730" y="258" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">Farmaco</text>
+                                    <text x="630" y="285" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- id_farmaco: int</text>
+                                    <text x="630" y="303" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- nombre: str</text>
+                                    <text x="630" y="321" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- precio: float</text>
+                                    <text x="630" y="339" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- componentes: str</text>
+                                    <text x="630" y="357" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- fecha_venc: date</text>
+                                    <text x="630" y="375" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- lote: str</text>
+                                </g>
+
+                                <!-- Cliente -->
+                                <g class="uml-box-group">
+                                    <rect x="40" y="240" width="200" height="130" class="uml-box-rect" />
+                                    <rect x="40" y="240" width="200" height="28" class="uml-box-header" />
+                                    <text x="140" y="258" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">Cliente</text>
+                                    <text x="50" y="285" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- id_cliente: int</text>
+                                    <text x="50" y="303" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- nombre: str</text>
+                                    <text x="50" y="321" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- telefono: str</text>
+                                    <text x="50" y="339" font-size="10" font-family="'JetBrains Mono', monospace" fill="#1a1a1a">- puntos_fidelidad: int</text>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sub panel: Relationships Matrix -->
+                <div class="sub-panel" id="sub-tab-relaciones">
+                    <div class="card-box">
+                        <div class="card-title-bar">
+                            <h2><i class="fa-solid fa-list-check"></i> Matriz de Relaciones Estructurales</h2>
+                            <div class="search-container">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" id="search-relations" class="search-input" placeholder="Buscar relación o regla...">
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 15%;">Clase Origen</th>
+                                        <th style="width: 10%; text-align: center;">Mult. Origen</th>
+                                        <th style="width: 15%;">Verbo / Acción</th>
+                                        <th style="width: 10%; text-align: center;">Mult. Destino</th>
+                                        <th style="width: 15%;">Clase Destino</th>
+                                        <th style="width: 35%;">Regla de Negocio Operativa</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="relations-table-body">
+                                    <!-- Loaded Dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SYSTEM 2: INVENTARIO -->
+            <div class="tab-panel" id="tab-inventario">
+                <!-- Subtabs -->
+                <div class="sub-tabs">
+                    <button class="sub-tab-button active" data-sub="sub-tab-almacen">🏬 Almacén Central (Bolivia Top 40)</button>
+                    <button class="sub-tab-button" data-sub="sub-tab-transacciones">🔄 Transacciones (Ingresos/Salidas)</button>
+                    <button class="sub-tab-button" data-sub="sub-tab-proveedor">🤝 Proveedor Autorizado</button>
+                </div>
+
+                <!-- Sub panel: Almacén -->
+                <div class="sub-panel active" id="sub-tab-almacen">
+                    <div class="card-box">
+                        <div class="card-title-bar">
+                            <h2><i class="fa-solid fa-boxes-stacked"></i> Stock del Almacén Central</h2>
+                            <div class="search-container">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" id="search-drugs" class="search-input" placeholder="Buscar por fármaco, lote o fórmula...">
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID Fármaco</th>
+                                        <th>Nombre Comercial</th>
+                                        <th>Precio</th>
+                                        <th>Componentes Químicos</th>
+                                        <th>Fecha Vencimiento</th>
+                                        <th>Número Lote</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="drugs-table-body">
+                                    <!-- Loaded Dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sub panel: Transacciones -->
+                <div class="sub-panel" id="sub-tab-transacciones">
+                    <div class="card-box">
+                        <div class="card-title-bar">
+                            <h2><i class="fa-solid fa-arrow-down-long" style="color: var(--accent-green);"></i> Entidad: Ingresos de Stock</h2>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID Ingreso</th>
+                                        <th>Fármaco</th>
+                                        <th>Cantidad Recibida</th>
+                                        <th>Lote Asignado</th>
+                                        <th>Fecha Registro</th>
+                                        <th>Operador Autorizado</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="inbound-table-body">
+                                    <!-- Loaded Dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card-box">
+                        <div class="card-title-bar">
+                            <h2><i class="fa-solid fa-arrow-up-long" style="color: var(--accent-red);"></i> Entidad: Salidas de Stock (Despachos)</h2>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID Salida</th>
+                                        <th>Fármaco</th>
+                                        <th>Cantidad Retirada</th>
+                                        <th>Motivo Despacho</th>
+                                        <th>Fecha Retiro</th>
+                                        <th>Cajero Encargado</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="outbound-table-body">
+                                    <!-- Loaded Dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sub panel: Proveedor -->
+                <div class="sub-panel" id="sub-tab-proveedor">
+                    <div class="supplier-card">
+                        <div class="supplier-header">
+                            <i class="fa-solid fa-handshake-angle"></i> Datos Generales de Proveedor Exclusivo
+                        </div>
+                        <div class="supplier-body">
+                            <div class="supplier-row">
+                                <div class="supplier-label">Ciudad Sede:</div>
+                                <div class="supplier-val">Santa Cruz</div>
+                            </div>
+                            <div class="supplier-row">
+                                <div class="supplier-label">Nombre de Representante:</div>
+                                <div class="supplier-val">Pablo Rivera Castillo</div>
+                            </div>
+                            <div class="supplier-row">
+                                <div class="supplier-label">Número Telefónico:</div>
+                                <div class="supplier-val">77902381</div>
+                            </div>
+                            <div class="supplier-row">
+                                <div class="supplier-label">Dirección Comercial:</div>
+                                <div class="supplier-val">3er Anillo, Calle Sandia</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SYSTEM 3: VENTAS -->
+            <div class="tab-panel" id="tab-ventas">
+                <!-- Subtabs -->
+                <div class="sub-tabs">
+                    <button class="sub-tab-button active" data-sub="sub-tab-facturas">📑 Facturas Emitidas (Mayo)</button>
+                    <button class="sub-tab-button" data-sub="sub-tab-declarativo">📊 Notas de Ventas (SIN-Impuestos)</button>
+                    <button class="sub-tab-button" data-sub="sub-tab-clientes">👥 Clientes Fidelizados</button>
+                </div>
+
+                <!-- Sub panel: Facturas -->
+                <div class="sub-panel active" id="sub-tab-facturas">
+                    <div class="card-box">
+                        <div class="card-title-bar">
+                            <h2><i class="fa-solid fa-file-invoice"></i> Registro de Facturación Reciente</h2>
+                            <div class="search-container">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" id="search-invoices" class="search-input" placeholder="Buscar por factura o cliente...">
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Nro Factura</th>
+                                        <th>Fecha Emisión</th>
+                                        <th>NIT Cliente</th>
+                                        <th>Razón Social / Cliente</th>
+                                        <th>Monto Total</th>
+                                        <th>Estado SIN</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="invoices-table-body">
+                                    <!-- Loaded Dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sub panel: Declarativo Impuestos -->
+                <div class="sub-panel" id="sub-tab-declarativo">
+                    <div class="card-box">
+                        <div class="card-title-bar">
+                            <h2><i class="fa-solid fa-percent"></i> Declaración y Códigos de Control SIN</h2>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Código de Control SIN</th>
+                                        <th>Nro Factura Vinculada</th>
+                                        <th>Modalidad de Pago</th>
+                                        <th>Fecha Declaración</th>
+                                        <th>Tasa Impuesto Liquidada (13%)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tax-table-body">
+                                    <!-- Loaded Dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sub panel: Clientes de Fidelidad -->
+                <div class="sub-panel" id="sub-tab-clientes">
+                    <div class="card-box">
+                        <div class="info-note">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span>Haga clic sobre cualquier fila del cliente para auditar y generar su Comprobante de Pago y Verificación de SIN.</span>
+                        </div>
+                        <div class="card-title-bar">
+                            <h2><i class="fa-solid fa-award"></i> Registro de Puntos de Fidelidad</h2>
+                            <div class="search-container">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" id="search-clients" class="search-input" placeholder="Buscar por nombre, ID o teléfono...">
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID Cliente</th>
+                                        <th>Nombre Completo</th>
+                                        <th>Teléfono</th>
+                                        <th style="text-align: center;">Puntos Fidelidad</th>
+                                        <th>Última Compra Registrada</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="clients-table-body">
+                                    <!-- Loaded Dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SYSTEM 4: PLANILLAS -->
+            <div class="tab-panel" id="tab-planillas">
+                <!-- Subtabs -->
+                <div class="sub-tabs">
+                    <button class="sub-tab-button active" data-sub="sub-tab-asistencia">🕒 Asistencia e Incidencias</button>
+                    <button class="sub-tab-button" data-sub="sub-tab-planilla">💵 Liquidación de Sueldos</button>
+                </div>
+
+                <!-- Sub panel: Asistencia -->
+                <div class="sub-panel active" id="sub-tab-asistencia">
+                    <div class="card-box">
+                        <div class="card-title-bar">
+                            <h2><i class="fa-regular fa-clock"></i> Reporte Mensual de Asistencia</h2>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Empleado / Cargo</th>
+                                        <th style="text-align: center;">Mes Reporte</th>
+                                        <th style="text-align: center;">Atrasos Registrados</th>
+                                        <th style="text-align: center;">Faltas Registradas</th>
+                                        <th>Desglose de Incidencias</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="attendance-table-body">
+                                    <!-- Loaded Dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sub panel: Planilla Liquidación -->
+                <div class="sub-panel" id="sub-tab-planilla">
+                    <div class="card-box">
+                        <div class="card-title-bar">
+                            <h2><i class="fa-solid fa-money-check-dollar"></i> Sueldos Ajustados y Descuentos Aplicados</h2>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre Trabajador</th>
+                                        <th>Cargo</th>
+                                        <th>Mes Liquidado</th>
+                                        <th>Sueldo Base</th>
+                                        <th>Deducción Atrasos</th>
+                                        <th>Deducción Faltas</th>
+                                        <th>Sueldo Neto Ajustado</th>
+                                        <th>Fecha Pago</th>
+                                        <th>Estado Planilla</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="payroll-table-body">
+                                    <!-- Loaded Dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Interactive Audit Modal -->
+    <div class="modal-overlay" id="audit-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fa-solid fa-shield-halved"></i> AUDITORÍA Y VERIFICACIÓN DE TRANSACCIÓN
+            </div>
+            <div class="modal-body">
+                <div class="modal-detail-row">
+                    <div class="modal-detail-label">ID Cliente Registrado:</div>
+                    <div class="modal-detail-val" id="audit-client-id">CLI-0000</div>
+                </div>
+                <div class="modal-detail-row">
+                    <div class="modal-detail-label">Cliente (Razón Social):</div>
+                    <div class="modal-detail-val" id="audit-client-name">---</div>
+                </div>
+                <div class="modal-detail-row">
+                    <div class="modal-detail-label">NIT Declarado:</div>
+                    <div class="modal-detail-val code-value" id="audit-nit">---</div>
+                </div>
+                <div class="modal-detail-row">
+                    <div class="modal-detail-label">Nro. Factura Emitida:</div>
+                    <div class="modal-detail-val code-value" id="audit-invoice-num">---</div>
+                </div>
+                <div class="modal-detail-row">
+                    <div class="modal-detail-label">Fecha Transacción:</div>
+                    <div class="modal-detail-val" id="audit-date">--/--/----</div>
+                </div>
+                <div class="modal-detail-row">
+                    <div class="modal-detail-label">Monto Total Liquidado:</div>
+                    <div class="modal-detail-val" id="audit-total" style="color: var(--accent-green); font-weight: 800;">0.00 Bs.</div>
+                </div>
+                <div class="modal-detail-row">
+                    <div class="modal-detail-label">Puntos Acumulados:</div>
+                    <div class="modal-detail-val" id="audit-points">0 Pts.</div>
+                </div>
+                <div class="modal-detail-row">
+                    <div class="modal-detail-label">Organismo Control:</div>
+                    <div class="modal-detail-val" style="color: var(--primary-dark); font-weight: 700;">Impuestos Nacionales (SIN)</div>
+                </div>
+                <div class="modal-detail-row">
+                    <div class="modal-detail-label">Estado Transaccional:</div>
+                    <div class="modal-detail-val" id="audit-sin-status">---</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-close" id="btn-close-modal">Cerrar Auditoría</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core App JS -->
+    <script src="app.js"></script>
+</body>
+</html>
